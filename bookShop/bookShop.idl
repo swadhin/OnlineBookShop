@@ -1,0 +1,46 @@
+
+module onlineBookShopApp
+{
+
+	struct book
+	{
+		string isbnNo;	
+		string bookName;
+		string authorName;
+		string publisherName;
+		float bookPrice;
+		long qtAvail;
+		long qtTotal;
+	};
+
+	//typedef sequence<book> books;
+	//typedef sequence<string> StringSeq;
+
+	struct invoiceReturn
+	{
+		string isbnNo;	
+		string bookName;
+		string authorName;
+		string publisherName;
+		float bookPrice;
+		long qtRequired;
+		float totalPrice;
+		string address;
+	
+	};
+	exception Unknown{};
+	
+	interface bookShop
+	{
+		book search_By_isbnNo(in string isbn) raises (Unknown);
+		
+		book search_By_bookName(in string bname) raises (Unknown);
+		
+		book search_By_authorName(in string aname) raises (Unknown);
+		
+		long order_Books(in invoiceReturn ivR) raises (Unknown);
+	
+		invoiceReturn get_and_show_Invoice() raises(Unknown);
+		
+	};
+}; 

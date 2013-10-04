@@ -1,0 +1,6 @@
+1>orbd -ORBInitialPort 9050 -ORBInitialHost localhost& (STARTING ORBD)
+
+2>java bookShopServer -ORBInitialPort 9050 -ORBInitialHost localhost& (RUNNING THE SERVER)
+
+3>java bookShopClient -ORBInitialPort 9050 -ORBInitialHost localhost  (RUNNING THE CLIENT)
+
